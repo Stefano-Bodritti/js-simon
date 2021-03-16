@@ -32,13 +32,17 @@ setTimeout(function () {
   for (var i = 0; i < 5; i++) {
     var numeroUtente = parseInt(prompt("Inserisci numero"));
     // 2a. verifico se il numero inserito si trova nel arrayCasuale
-    if ( arrayCasuale.includes(numeroUtente) ) {
+    if ( arrayCasuale.includes(numeroUtente) && !arrayNumeriEsatti.includes(numeroUtente) ) {
       arrayNumeriEsatti.push(numeroUtente);
     }
   }
-console.log(arrayNumeriEsatti);
+  // console.log(arrayNumeriEsatti);
+  // 3. stampo i numeri indovinati
+  alert("Hai indovinato ben " + arrayNumeriEsatti.length + " numero/i!");
+  if ( arrayNumeriEsatti.length > 0 ) {
+    alert("I numeri indovinati sono " + arrayNumeriEsatti);
+  }
 
-}, 3000);
-
+}, 30000);
 
 });
