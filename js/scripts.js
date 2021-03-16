@@ -21,10 +21,24 @@ $(function () {
 var minimo = 1;
 var massimo = 100;
 var numeriGenerati = 5;
+var arrayNumeriEsatti = [];
 
 // 1. genero 5 numeri random e li stampo a schermo
 var arrayCasuale = numeroRandom(minimo, massimo, numeriGenerati);
 alert(arrayCasuale);
+
+// 2. aspetto 30 secondi e richiedo i numeri all'utente 5 volte
+setTimeout(function () {
+  for (var i = 0; i < 5; i++) {
+    var numeroUtente = parseInt(prompt("Inserisci numero"));
+    // 2a. verifico se il numero inserito si trova nel arrayCasuale
+    if ( arrayCasuale.includes(numeroUtente) ) {
+      arrayNumeriEsatti.push(numeroUtente);
+    }
+  }
+console.log(arrayNumeriEsatti);
+
+}, 3000);
 
 
 });
